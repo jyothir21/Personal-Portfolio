@@ -100,18 +100,18 @@ nav ul li a:hover::after {
   flex-basis: 60%;
 }
 
-.sub-title{
+.sub-title {
   font-size: 60px;
   font-weight: 600;
   color: #fff;
 }
 
-.tab-titles{
+.tab-titles {
   display: flex;
   margin: 20px 0 40px;
 }
 
-.tab-links{
+.tab-links {
   margin-right: 50px;
   font-size: 18px;
   font-weight: 500;
@@ -119,8 +119,8 @@ nav ul li a:hover::after {
   position: relative;
 }
 
-.tab-links::after{
-  content: '';
+.tab-links::after {
+  content: "";
   width: 0;
   height: 3px;
   background: #ff004f;
@@ -130,24 +130,110 @@ nav ul li a:hover::after {
   transition: 0.5s;
 }
 
-.tab-links.active-link::after{
+.tab-links.active-link::after {
   width: 50%;
 }
 
-.tab-contents ul li{
+.tab-contents ul li {
   list-style: none;
   margin: 10px 0;
 }
 
-.tab-contents ul li span{
+.tab-contents ul li span {
   color: #b54769;
   font-size: 14px;
 }
 
-.tab-contents{
+.tab-contents {
   display: none;
 }
 
-.tab-contents.active-tab{
+.tab-contents.active-tab {
   display: block;
+}
+
+/* !------------- PROJECTS -------------! */
+#projects {
+  padding: 50px 0;
+}
+
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer{
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+
+.layer h3{
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.layer a{
+  margin-top: 20px;
+  color: #ff004f;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.work:hover img{
+  transform: scale(1.1);
+}
+
+.work:hover .layer{
+  height: 100%;
+}
+
+.btn{
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ff004f;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.5s;
+}
+
+.btn:hover{
+  background: #ff004f;
 }
