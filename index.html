@@ -11,7 +11,7 @@
     <div id="header">
       <div class="container">
         <nav>
-          <img src="images/logo-tut.png" class="logo" />
+          <img src="images/logo.png" class="logo" />
           <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -19,7 +19,83 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
+        <div class="header-text">
+          <p>UI/UX Designer</p>
+          <h1>Hi, I'm <span>Jyothir</span><br />from Canada</h1>
+        </div>
       </div>
     </div>
+
+    <!-- !------------- ABOUT -------------! -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/logo.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              elementum, nisi in aliquet congue, orci justo iaculis dui, nec
+              ultrices ligula libero quis nibh. Maecenas vulputate congue
+              ultricies. Aenean tempus eros eget hendrerit dignissim. Integer
+              molestie, ante eget tincidunt rutrum, justo dolor mattis enim,
+              ullamcorper semper mauris odio vel dui. Sed leo lectus, finibus a
+              erat in, auctor dignissim arcu. Etiam blandit diam felis, et
+              porttitor est finibus in. Etiam elit tellus, convallis a eleifend
+              quis, interdum non velit. Morbi laoreet nunc ligula, id pretium
+              diam commodo sed. Nunc non pulvinar enim.
+
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+              </div>
+
+              <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li><span>UI?UX</span><br>Desigining Web/App interfaces</li>
+                  <li><span>Web Development</span><br>Web app development</li>
+                  <li><span>App Development</span><br>Building apps</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li><span>Replace</span><br>Desigining Web/App interfaces</li>
+                  <li><span>Replace</span><br>Web app development</li>
+                  <li><span>Replace</span><br>Building apps</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li><span>Replace 1</span><br>Desigining Web/App interfaces</li>
+                  <li><span>Replace 1</span><br>Web app development</li>
+                  <li><span>Replace 1</span><br>Building apps</li>
+                </ul>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname){
+        for(tablink of tablinks){
+          tablink.classList.remove("active-link");
+        }
+
+        for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
   </body>
 </html>
