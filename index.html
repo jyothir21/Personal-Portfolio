@@ -12,7 +12,7 @@
     <div id="header">
       <div class="container">
         <nav>
-          <img src="images/logo.png" class="logo" />
+          <a href="https://jyothir21.github.io/Personal-Portfolio/"><img src="images/logo2.png" class="logo"/></a>
           <ul id="sidemenu">
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -161,6 +161,8 @@
       </div>
     </div>
 
+    <a href="#" class="top">Back to Top <i class="fa-regular fa-circle-up"></i></a>
+
     <script>
       var tablinks = document.getElementsByClassName("tab-links");
       var tabcontents = document.getElementsByClassName("tab-contents");
@@ -188,24 +190,36 @@
       }
     </script>
 
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzCgJT95DGEUAYG7hArygfpsAhgxzGTNZujeIsd7ZJmIw-cS8pgViiEwFlucWpUd5cELQ/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
+    <script>
+      const Top = document.querySelector(".top");
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          msg.innerHTML = "Message sent successfully!"
-          setTimeout(function(){
-            msg.innerHTML = ""
-          }, 7000)
-          form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+      window.addEventListener("scroll", ()=>{
+        if(window.pageYOffset > 170){
+          Top.classList.add("active");
+        }else{
+          Top.classList.remove("active");
+        }
+      })
+    </script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzCgJT95DGEUAYG7hArygfpsAhgxzGTNZujeIsd7ZJmIw-cS8pgViiEwFlucWpUd5cELQ/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            }, 7000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
 
   </body>
 </html>

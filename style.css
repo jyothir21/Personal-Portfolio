@@ -4,6 +4,9 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+/* Red: E87169
+   Blue: 9AF0F5
+*/
 
 html{
   scroll-behavior: smooth;
@@ -23,7 +26,7 @@ body {
 }
 
 .container {
-  padding: 10px 7%;
+  padding: 10px 7%;  
 }
 
 nav {
@@ -34,7 +37,8 @@ nav {
 }
 
 .logo {
-  width: 140px;
+  width: 90px;
+  height: auto;  
 }
 
 nav ul li {
@@ -326,6 +330,34 @@ form .btn2{
   display: block;
 }
 
+/* !------------- BACK TO TOP -------------! */
+.top{
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+  font-weight: 500;
+  background: #fff;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  border-radius: 100px;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.top.active{
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.top i{
+  color: #ff004f;
+  padding-left: 5px;
+  font-size: 22px;  
+}
 /* !------------- CSS FOR PHONE -------------! */
 nav .fa-solid{
   display: none;
