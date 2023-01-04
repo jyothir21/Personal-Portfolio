@@ -15,6 +15,8 @@ html {
 body {
   background: #080808;
   color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #header {
@@ -51,7 +53,7 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 18px;
-  position: relative;
+  position: relative;  
 }
 
 nav ul li a::after {
@@ -66,21 +68,17 @@ nav ul li a::after {
 }
 
 nav ul li a:hover::after {
-  width: 100%;
+  width: 100%;  
 }
 
 .header-text {
-  margin-top: 20%;
+  margin-top: 40%;
   font-size: 30px;
 }
 
 .header-text h1 {
   margin-top: 20px;
   font-size: 60px;
-}
-
-.header-text span {
-  color: #9af0f5;
 }
 
 /* !------------- ABOUT -------------! */
@@ -101,6 +99,7 @@ nav ul li a:hover::after {
 
 .about-col-1 img {
   width: 100%;
+  object-position: 20%;
   border-radius: 15px;
 }
 
@@ -125,6 +124,11 @@ nav ul li a:hover::after {
   font-weight: 500;
   cursor: pointer;
   position: relative;
+  transition: transform 0.5s;
+}
+
+.tab-links:hover {  
+  transform: translateY(-5px);
 }
 
 .tab-links::after {
@@ -167,9 +171,9 @@ nav ul li a:hover::after {
 
 .work-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 40px;
-  margin-top: 50px;
+  grid-template-columns: repeat(3, minmax(250px, 0.5fr));    
+  grid-gap: 40px;  
+  margin-top: 50px;    
 }
 
 .work {
@@ -235,16 +239,28 @@ nav ul li a:hover::after {
   margin: 50px auto;
   width: fit-content;
   border: 1px solid #9af0f5;
-  padding: 14px 50px;
+  padding: 16px 50px;
   border-radius: 6px;
   text-decoration: none;
+  background-color: #000;
   color: #fff;
+  font-size: 15px;
   transition: background 0.5s;
 }
 
 .btn:hover {
   background: rgba(154, 240, 245, 0.2);
+  cursor: pointer;
 }
+
+.moreProjects{
+  display: none;
+}
+
+.work-list.show-more .moreProjects{
+  display: grid;
+}
+
 
 /* !------------- CONTACT -------------! */
 .contact-left {
@@ -263,6 +279,11 @@ nav ul li a:hover::after {
   color: #9af0f5;
   margin-right: 15px;
   font-size: 25px;
+  transition: transform 0.5s;
+}
+
+.contact-left p i:hover {  
+  transform: translateY(-5px);
 }
 
 .social-icons {
@@ -338,6 +359,30 @@ form .btn2 {
   display: block;
 }
 
+.btn-shine {
+  background: linear-gradient(to right, #9af0f5 0, #184763 30%, #9af0f5 60%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  60% {
+    background-position: 270px;
+  }
+  100% {
+    background-position: 370px;
+  }
+}
 /* !------------- BACK TO TOP -------------! */
 .top {
   text-decoration: none;
@@ -366,6 +411,7 @@ form .btn2 {
   padding-left: 5px;
   font-size: 22px;
 }
+
 /* !------------- CSS FOR PHONE -------------! */
 nav .fa-solid {
   display: none;
@@ -377,7 +423,7 @@ nav .fa-solid {
   }
 
   .header-text {
-    margin-top: 100%;
+    margin-top: 120%;
     font-size: 16px;
   }
 
@@ -444,231 +490,5 @@ nav .fa-solid {
 
   .copyright {
     font-size: 14px;
-  }
-}
-
-@font-face {
-  font-family: Clip;
-  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
-}
-
-.sign {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  height: 40%;
-  background-image: radial-gradient(
-    ellipse 50% 35% at 50% 50%,
-    #6b1839,
-    transparent
-  );
-  transform: translate(-50%, -50%);
-  letter-spacing: 2;
-  left: 28.5%;
-  top: 52%;
-  font-family: "Clip";
-  text-transform: uppercase;
-  font-size: 1em;
-  color: #ffe6ff;
-  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #9af0f5,
-    -0.2rem 0.1rem 1rem #9af0f5, 0.2rem 0.1rem 1rem #9af0f5,
-    0 -0.5rem 2rem #44abe7, 0 0.5rem 3rem #44abe7;
-  animation: shine 2s forwards, flicker 3s infinite;
-}
-
-.sign2 {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  height: 40%;
-  background-image: radial-gradient(
-    ellipse 50% 35% at 50% 50%,
-    #6b1839,
-    transparent
-  );
-  transform: translate(-50%, -50%);
-  letter-spacing: 2;
-  left: 17.5%;
-  top: 60%;
-  font-family: "Clip";
-  text-transform: uppercase;
-  font-size: 1em;
-  color: #ffe6ff;
-  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #9af0f5,
-    -0.2rem 0.1rem 1rem #9af0f5, 0.2rem 0.1rem 1rem #9af0f5,
-    0 -0.5rem 2rem #44abe7, 0 0.5rem 3rem #44abe7;
-  animation: shine 2s forwards, flicker 3s infinite;
-}
-
-@keyframes blink {
-  0%,
-  22%,
-  36%,
-  75% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #9af0f5,
-      -0.2rem 0.1rem 1rem #9af0f5, 0.2rem 0.1rem 1rem #9af0f5,
-      0 -0.5rem 2rem #44abe7, 0 0.5rem 3rem #44abe7;
-  }
-  28%,
-  33% {
-    color: #9af1f58c;
-    text-shadow: none;
-  }
-  82%,
-  97% {
-    color: #9af1f58c;
-    text-shadow: none;
-  }
-}
-
-.flicker {
-  animation: shine 2s forwards, blink 3s 2s infinite;
-}
-
-.fast-flicker {
-  animation: shine 2s forwards, blink 10s 1s infinite;
-}
-
-@keyframes shine {
-  0% {
-    color: #6b1839;
-    text-shadow: none;
-  }
-  100% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #9af0f5,
-      -0.2rem 0.1rem 1rem #9af0f5, 0.2rem 0.1rem 1rem #9af0f5,
-      0 -0.5rem 2rem #44abe7, 0 0.5rem 3rem #44abe7;
-  }
-}
-
-@keyframes flicker {
-  from {
-    opacity: 1;
-  }
-
-  4% {
-    opacity: 0.9;
-  }
-
-  6% {
-    opacity: 0.85;
-  }
-
-  8% {
-    opacity: 0.95;
-  }
-
-  10% {
-    opacity: 0.9;
-  }
-
-  11% {
-    opacity: 0.922;
-  }
-
-  12% {
-    opacity: 0.9;
-  }
-
-  14% {
-    opacity: 0.95;
-  }
-
-  16% {
-    opacity: 0.98;
-  }
-
-  17% {
-    opacity: 0.9;
-  }
-
-  19% {
-    opacity: 0.93;
-  }
-
-  20% {
-    opacity: 0.99;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  26% {
-    opacity: 0.94;
-  }
-
-  28% {
-    opacity: 0.98;
-  }
-
-  37% {
-    opacity: 0.93;
-  }
-
-  38% {
-    opacity: 0.5;
-  }
-
-  39% {
-    opacity: 0.96;
-  }
-
-  42% {
-    opacity: 1;
-  }
-
-  44% {
-    opacity: 0.97;
-  }
-
-  46% {
-    opacity: 0.94;
-  }
-
-  56% {
-    opacity: 0.9;
-  }
-
-  58% {
-    opacity: 0.9;
-  }
-
-  60% {
-    opacity: 0.99;
-  }
-
-  68% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 0.9;
-  }
-
-  72% {
-    opacity: 0.95;
-  }
-
-  93% {
-    opacity: 0.93;
-  }
-
-  95% {
-    opacity: 0.95;
-  }
-
-  97% {
-    opacity: 0.93;
-  }
-
-  to {
-    opacity: 1;
   }
 }

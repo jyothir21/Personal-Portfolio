@@ -24,21 +24,14 @@
           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-          <p>UI/UX Designer</p>
-          <h1>Hi, I'm 
-            <div class="sign">
-              <span class="fast-flicker">j</span>yot<span class="flicker">h</span>ir
-            </div>
-            <br/>
-            <div class="sign2">
-              k<span class="fast-flicker">ris</span>hn<span class="flicker">an</span>
-            </div>
+          <p>Student/Developer</p>
+          <h1>Hi, I'm <span class="btn-shine">Jyothir</span><br/> 
+            <span class="btn-shine">Krishnan</span>
           </h1>
         </div>
       </div>
     </div>
 
-    
 
     <!-- !------------- ABOUT -------------! -->
     <div id="about">
@@ -50,16 +43,8 @@
           <div class="about-col-2">            
             <h1 class="sub-title">About Me</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              elementum, nisi in aliquet congue, orci justo iaculis dui, nec
-              ultrices ligula libero quis nibh. Maecenas vulputate congue
-              ultricies. Aenean tempus eros eget hendrerit dignissim. Integer
-              molestie, ante eget tincidunt rutrum, justo dolor mattis enim,
-              ullamcorper semper mauris odio vel dui. Sed leo lectus, finibus a
-              erat in, auctor dignissim arcu. Etiam blandit diam felis, et
-              porttitor est finibus in. Etiam elit tellus, convallis a eleifend
-              quis, interdum non velit. Morbi laoreet nunc ligula, id pretium
-              diam commodo sed. Nunc non pulvinar enim.
+              I am a second year Computer Science student at University of Guelph
+              who is aspiring to be a software developer. I currently
 
               <div class="tab-titles">
                 <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -129,14 +114,30 @@
               <h3>Online Shopping App</h3>
               <p> 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas elementum, nisi in aliquet congue, orci justo 
+                Maecenas elementum, nisi in aliquet congue, orci justo
                 iaculis dui, nec ultrices ligula libero quis nibh.
               </p>
               <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
-        </div>
-        <a href="#" class="btn">See more</a>
+          <span class="moreProjects">
+            <div class="work">
+              <img src="images/work.jpg">
+              <div class="layer">
+                <h3>Online Shopping App</h3>
+                <p> 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas elementum, nisi in aliquet congue, orci justo
+                  iaculis dui, nec ultrices ligula libero quis nibh.
+                </p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>            
+          </span>
+          
+        </div>        
+        <button class="btn"> See more</button>
+        <!-- <a href="#" class="btn">See more</a> -->
       </div>
     </div>
 
@@ -199,6 +200,20 @@
       function closemenu(){
         sidemenu.style.right = "-200px";
       }
+    </script>
+
+    <script>
+      const seeMoreBtn = document.querySelector('.btn');
+      const project = document.querySelector('.work-list');
+
+      seeMoreBtn.addEventListener('click', (e)=>{
+        project.classList.toggle('show-more');
+        if(seeMoreBtn.innerText === 'See more'){
+          seeMoreBtn.innerText = 'See less';
+        }else{
+          seeMoreBtn.innerText = 'See more';
+        }
+      })
     </script>
 
     <script>
